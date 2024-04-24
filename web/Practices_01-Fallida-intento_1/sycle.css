@@ -1,0 +1,197 @@
+/* Importar la fuente desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+/* Establecer estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* Definir variables de color */
+:root {
+  --bg-color: #000000;
+  --second-bg-color: #f9e8c9;
+  --text-color: #ffffff;
+  --main-color: #ff0000;
+}
+
+/* Establecer estilos globales */
+html {
+  font-size: 62.5%; /* Establecer el tamaño de fuente base a 10px */
+  overflow: hidden; /* Ocultar la barra de desplazamiento horizontal */
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilizar la barra de desplazamiento */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* Estilos del encabezado */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 9%;
+  background: rgba(0, 0, 0, 0.7);
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5)); /* Ajustar la sombra */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  font-size: 3rem;
+  color: var(--main-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom-color: var(--main-color);
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 995px) {
+  #menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 40%;
+    border: 3px solid var(--main-color);
+    padding: 1rem 3%;
+    background-color: var(--second-bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    display: none; /* Ocultar inicialmente */
+  }
+  .navbar.active {
+    display: block; /* Mostrar cuando está activo */
+  }
+}
+
+/* Estilos para la sección de contenido */
+section {
+  min-height: 100vh;
+  padding: 5rem 9%;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background: var(--bg-color);
+}
+.home .home-content h1 {
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+span {
+  color: var(--main-color);
+}
+.home-content h3 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.home-img {
+  border-radius: 60%;
+}
+.home-img img {
+  position: relative;
+  width: 32vw;
+  border-radius: 80%;
+  box-shadow: 0 0 250px var(--main-color); /* Ajustar el valor */
+  cursor: pointer;
+}
+.home-img img:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(0 0 25px var(--main-color)); /* Ajustar el valor */
+}
+.home-content p {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+/* Estilos para los iconos sociales */
+.social-icons {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border-radius: 50%;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.social-icons a {
+  font-size: 2rem; /* Ajuste del tamaño de fuente de los iconos */
+  color: var(--main-color); /* Color principal para los iconos */
+  margin: 0 1rem; /* Espaciado entre los iconos */
+  transition: color 0.3s ease; /* Transición de color al pasar el mouse */
+}
+.social-icons a:hover {
+  color: white;
+  transform: scale(1.3) translateY(-5px);
+  background: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color); /* Ajustar el valor */
+}
+
+/* Estilos para los botones */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--bg-color);
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: var(--main-color);
+  border: 2.5px solid var(--main-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(1.03);
+  background-color: var(--main-color);
+  color: var(--text-color);
+  box-shadow: 0 0 25px var(--main-color); /* Ajustar el valor */
+}
